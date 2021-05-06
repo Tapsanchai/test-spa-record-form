@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { Component } from "react";
+import { Container, Row, Col } from "reactstrap";
+import NavbarTem from "./reactstrap_tem/NavbarTem";
+import ContantTem from "./reactstrap_tem/home/ContantTem";
+import HomepageTem from "./reactstrap_tem/home/HomepageTem";
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="">
+        {/* <Container className="themed-container" fluid={true}>.container-fluid</Container> */}
+        <Container fluid={true} className="bg-dark">
+          <Container>
+            <NavbarTem />
+          </Container>
+        </Container>
+
+        <Container fluid={true} className="bg-light">
+          <Container>
+            <HomepageTem />
+          </Container>
+        </Container>
+
+        <Container>
+          <ContantTem />
+        </Container>
+      </div>
+    );
+  }
 }
-
 export default App;
